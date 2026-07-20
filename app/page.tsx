@@ -14,7 +14,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen relative overflow-hidden text-white">
+    <main className="min-h-screen relative overflow-hidden bg-gradient-to-b from-[#020617] via-[#02091a] to-[#020617] text-white">
       {/* Animated aurora background */}
       <div className="aurora-bg" />
 
