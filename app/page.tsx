@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="min-h-screen relative overflow-hidden bg-gradient-to-b from-[#020617] via-[#02091a] to-[#020617] text-white">
       {/* Animated aurora background */}
-      <div className="aurora-bg" />
+      <div className="aurora-bg animate-aurora" />
 
       {/* Floating blobs */}
       <div className="blob w-64 h-64 bg-purple-500/40 -top-24 -left-24" />
@@ -440,7 +440,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-8 border-t border-white/10">
         <div className="max-w-6xl mx-auto px-4 py-4 text-xs text-gray-400 flex justify-between">
-          <span>Built by Anshada Wankhede · Pune</span>
+          <span>Built by Anshada Wankhede</span>
           <span>Hosted on Vercel</span>
         </div>
       </footer>

@@ -7,13 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        navy: "#0a1f44",   // dark navy
-        ivory: "#fffff0",  // off-white
-        purple: "#7c3aed", // violet accent
-        cyan: "#06b6d4",   // cyan accent
+      keyframes: {
+        aurora: {
+          "0%": { backgroundPosition: "0% 0%" },
+          "50%": { backgroundPosition: "50% 40%" },
+          "100%": { backgroundPosition: "100% 80%" },
+        },
+      },
+      animation: {
+        aurora: "aurora 20s ease-in-out infinite alternate",
       },
     },
   },
   plugins: [],
-}
+};
