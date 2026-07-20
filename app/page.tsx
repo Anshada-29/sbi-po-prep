@@ -1,9 +1,34 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.scrollY * 0.08); // small parallax
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#020617] via-[#02091a] to-[#020617] text-white">
-      <div className="max-w-5xl mx-auto px-4 py-16 flex flex-col gap-12">
+    <main className="min-h-screen relative overflow-hidden text-white">
+      {/* Animated aurora background */}
+      <div className="aurora-bg" />
+
+      {/* Floating blobs */}
+      <div className="blob w-64 h-64 bg-purple-500/40 -top-16 -left-24" />
+      <div className="blob w-72 h-72 bg-blue-500/40 top-40 -right-32" />
+      <div className="blob w-56 h-56 bg-cyan-400/40 bottom-0 left-1/3" />
+
+      <div className="relative max-w-5xl mx-auto px-4 py-16 flex flex-col gap-12">
         {/* Hero Section */}
-        <section className="flex flex-col gap-6">
+        <section
+          className="flex flex-col gap-6 transition-transform duration-500"
+          style={{ transform: `translateY(${offset * -0.5}px)` }}
+        >
           <p className="text-sm text-blue-400 uppercase tracking-[0.2em]">
             SBI PO Prelims · Personal Prep Hub
           </p>
@@ -16,13 +41,13 @@ export default function Home() {
             and Reasoning — all in one place, built just for you.
           </p>
           <div className="flex flex-wrap gap-4 mt-4">
-            <button className="rounded-full px-6 py-2 bg-blue-500 hover:bg-blue-400 text-sm font-semibold">
+            <button className="rounded-full px-6 py-2 bg-blue-500 hover:bg-blue-400 text-sm font-semibold transition-colors">
               Start English
             </button>
-            <button className="rounded-full px-6 py-2 bg-purple-500 hover:bg-purple-400 text-sm font-semibold">
+            <button className="rounded-full px-6 py-2 bg-purple-500 hover:bg-purple-400 text-sm font-semibold transition-colors">
               Start Quant
             </button>
-            <button className="rounded-full px-6 py-2 border border-blue-500/60 text-sm font-semibold">
+            <button className="rounded-full px-6 py-2 border border-blue-500/60 text-sm font-semibold hover:border-blue-400 transition-colors">
               Start Reasoning
             </button>
           </div>
@@ -89,14 +114,14 @@ export default function Home() {
               <a
                 href="https://testbook.com/sbi-po/test-series"
                 target="_blank"
-                className="inline-block rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-xs font-semibold"
+                className="inline-block rounded-full px-4 py-2 bg-blue-500 hover:bg-blue-400 text-xs font-semibold transition-colors"
               >
                 Testbook Free Mocks
               </a>
               <a
                 href="https://www.oliveboard.in/sbi-po-mock-test/"
                 target="_blank"
-                className="mt-2 inline-block rounded-full px-4 py-2 bg-blue-500/70 hover:bg-blue-400 text-xs font-semibold"
+                className="mt-2 inline-block rounded-full px-4 py-2 bg-blue-500/70 hover:bg-blue-400 text-xs font-semibold transition-colors"
               >
                 Oliveboard Series
               </a>
@@ -109,7 +134,7 @@ export default function Home() {
               <a
                 href="https://www.studiestoday.com/sarkari-exams/banking"
                 target="_blank"
-                className="inline-block rounded-full px-4 py-2 bg-purple-500 hover:bg-purple-400 text-xs font-semibold"
+                className="inline-block rounded-full px-4 py-2 bg-purple-500 hover:bg-purple-400 text-xs font-semibold transition-colors"
               >
                 Studiestoday Banking PYQs
               </a>
@@ -122,14 +147,14 @@ export default function Home() {
               <a
                 href="https://www.ixambee.com/free-mock-tests/sbi-po-pre"
                 target="_blank"
-                className="inline-block rounded-full px-4 py-2 border border-blue-500/60 text-xs font-semibold"
+                className="inline-block rounded-full px-4 py-2 border border-blue-500/60 text-xs font-semibold hover:border-blue-400 transition-colors"
               >
                 ixamBee Prelims
               </a>
               <a
                 href="https://sarkariexam.center/sbi-po-mock-test/"
                 target="_blank"
-                className="mt-2 inline-block rounded-full px-4 py-2 border border-blue-500/60 text-xs font-semibold"
+                className="mt-2 inline-block rounded-full px-4 py-2 border border-blue-500/60 text-xs font-semibold hover:border-blue-400 transition-colors"
               >
                 Sarkariexam Free Tests
               </a>
@@ -305,6 +330,14 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      {/* Footer */}
+      <footer className="mt-8 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 py-4 text-xs text-gray-400 flex justify-between">
+          <span>Built by Anshada Wankhede · Pune</span>
+          <span>Hosted on Vercel</span>
+        </div>
+      </footer>
     </main>
   );
 }
