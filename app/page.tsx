@@ -24,7 +24,7 @@ export default function Home() {
       <div className="blob w-64 h-64 bg-cyan-400/40 bottom-0 left-1/3" />
 
       <div className="relative max-w-6xl mx-auto px-4 py-10 flex flex-col gap-10">
-        {/* Top Nav / Dashboard strip */}
+        {/* Top Nav / Startup-style header */}
         <header className="flex flex-wrap items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-xl bg-white/10 flex items-center justify-center text-xs font-bold">
@@ -32,30 +32,48 @@ export default function Home() {
             </div>
             <div>
               <p className="text-xs text-gray-300">Personal Prep Platform</p>
-              <h1 className="text-lg font-semibold">SBI PO Prelims Dashboard</h1>
+              <h1 className="text-lg font-semibold">SBI PO Prelims Prep</h1>
             </div>
           </div>
           <nav className="flex flex-wrap gap-2 text-xs">
-            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20">
-              Tricks & Tips
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/15">
-              Dashboard Home
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/15">
-              Performance Log
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/15">
-              Analytics (Coming Soon)
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/15">
-              Mocks & PYQs
-            </span>
+            <a
+              href="#home"
+              className="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >
+              Home
+            </a>
+            <a
+              href="#study"
+              className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+            >
+              Study Material
+            </a>
+            <a
+              href="#mocks"
+              className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+            >
+              Mocks & Practice
+            </a>
+            <a
+              href="#doubts"
+              className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+            >
+              AI Doubt Solver
+            </a>
+            <a
+              href="#dashboard"
+              className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+            >
+              Dashboard
+            </a>
           </nav>
         </header>
 
         {/* Hero + Today panel */}
-        <section className="grid gap-6 md:grid-cols-[2fr,1.3fr] items-start">
+        <section
+          id="home"
+          className="grid gap-6 md:grid-cols-[2fr,1.3fr] items-start"
+        >
           {/* Hero Section */}
           <div
             className="flex flex-col gap-6 transition-transform duration-500"
@@ -69,18 +87,18 @@ export default function Home() {
               <span className="text-purple-300">smart free prep</span>
             </h2>
             <p className="text-sm md:text-base text-gray-300 max-w-xl">
-              This homepage is your mini dashboard: exam info, daily tasks,
-              tricks, mocks, and a 7-day crash plan, all built for you.
+              All your SBI PO prelims study material, mocks, and progress in one
+              simple dashboard so you don&apos;t have to jump between apps.
             </p>
             <div className="flex flex-wrap gap-3 mt-4">
               <button className="rounded-full px-5 py-2 bg-blue-500 hover:bg-blue-400 text-xs font-semibold transition-colors">
-                Go to English Tasks
+                View Study Material
               </button>
               <button className="rounded-full px-5 py-2 bg-purple-500 hover:bg-purple-400 text-xs font-semibold transition-colors">
-                Go to Quant Tasks
+                Open Mocks Hub
               </button>
               <button className="rounded-full px-5 py-2 border border-blue-500/60 hover:border-blue-400 text-xs font-semibold transition-colors">
-                Go to Reasoning Tasks
+                Check Dashboard
               </button>
             </div>
           </div>
@@ -89,15 +107,14 @@ export default function Home() {
           <div className="card">
             <h3 className="text-lg font-semibold mb-2">Today&apos;s Task</h3>
             <p className="text-xs text-gray-300 mb-2">
-              Simple checklist for today so you don&apos;t have to think too
-              much.
+              Simple checklist for today so you don&apos;t overthink.
             </p>
             <ul className="text-xs text-gray-200 list-disc list-inside space-y-1">
               <li>Attempt 1 full prelims mock or 3 sectional tests.</li>
               <li>English: 2 RCs + 10 error-spotting questions.</li>
               <li>Quant: 20 simplification + 1 DI set (5 Q).</li>
               <li>Reasoning: 1 puzzle or seating + 10 easy logic questions.</li>
-              <li>Write down 3 mistakes you made and how you&apos;ll avoid them.</li>
+              <li>Write down 3 mistakes and 3 improvements for the next mock.</li>
             </ul>
           </div>
         </section>
@@ -122,29 +139,35 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Progress Summary + Performance Log + Mock History */}
-        <section className="flex flex-col gap-6">
+        {/* Dashboard – Progress + Performance + History */}
+        <section id="dashboard" className="flex flex-col gap-6">
+          <h2 className="text-xl font-semibold">Dashboard · Progress</h2>
+          <p className="text-sm text-gray-300 max-w-xl">
+            Quick view of how your preparation is going. You can manually update
+            these cards as you attempt more mocks.
+          </p>
+
           {/* Progress summary cards */}
           <div className="grid gap-4 md:grid-cols-3 text-xs">
             <div className="card">
               <p className="font-semibold mb-1">Mocks attempted</p>
               <p className="text-2xl font-bold text-blue-400">5</p>
               <p className="text-gray-300 mt-1">
-                Update this number manually as you finish more tests.
+                Edit this number in code whenever you finish new tests.
               </p>
             </div>
             <div className="card">
               <p className="font-semibold mb-1">Average score</p>
               <p className="text-2xl font-bold text-purple-400">62%</p>
               <p className="text-gray-300 mt-1">
-                Use rough average from last few mocks (Prelims).
+                Rough average from your recent SBI PO prelims mocks.
               </p>
             </div>
             <div className="card">
-              <p className="font-semibold mb-1">Main focus area</p>
+              <p className="font-semibold mb-1">Focus area</p>
               <p className="text-sm text-gray-200">
-                Example: Quant arithmetic + puzzles. Change this based on your
-                weak topics.
+                Example: Quant arithmetic + puzzles. Change this as your weak
+                topics improve.
               </p>
             </div>
           </div>
@@ -155,28 +178,29 @@ export default function Home() {
             <div className="card">
               <h3 className="text-lg font-semibold mb-2">Performance Log</h3>
               <p className="text-xs text-gray-300 mb-2">
-                Use this card to note down how your mocks went. You can edit the
-                text in the code for each new mock.
+                Use this log to track important details from each mock. You can
+                rewrite these lines after every attempt.
               </p>
               <ul className="text-xs text-gray-200 list-disc list-inside space-y-1">
                 <li>
-                  Mock name: Testbook Free Mock 1 · Score: 54/100 · Time: 60
-                  min.
+                  Mock: Testbook Free Mock 1 · Score: 54/100 · Main issue: RC
+                  accuracy.
                 </li>
                 <li>
-                  Mock name: Oliveboard Prelims 1 · Score: 58/100 · Time: 60
-                  min.
+                  Mock: Oliveboard Prelims 1 · Score: 58/100 · Main issue: DI
+                  speed.
                 </li>
                 <li>
-                  Main weak areas: RC accuracy, DI speed, puzzle setup.
+                  Mock: ixamBee Free Test · Score: 60/100 · Main issue: puzzle
+                  setup.
                 </li>
                 <li>
-                  Action plan: extra RC practice, timed DI sets, puzzles daily.
+                  Plan: extra RC practice, timed DI sets, 1 puzzle every day.
                 </li>
               </ul>
               <p className="text-[11px] text-gray-400 mt-3">
-                Tip: You can duplicate these lines and adjust scores after each
-                mock so this becomes your small analytics log.
+                Tip: Just overwrite these lines with your real scores so this
+                becomes a simple analytics log.
               </p>
             </div>
 
@@ -184,8 +208,8 @@ export default function Home() {
             <div className="card">
               <h3 className="text-lg font-semibold mb-2">Mock History</h3>
               <p className="text-xs text-gray-300 mb-2">
-                Simple list of mocks attempted so far. Edit rows manually as you
-                progress.
+                Short history of mocks attempted. Edit rows manually in the
+                code.
               </p>
               <div className="text-[11px] text-gray-200">
                 <div className="flex justify-between border-b border-white/10 pb-1 mb-1">
@@ -210,107 +234,93 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-[11px] text-gray-400 mt-3">
-                You can add more rows and adjust dates/scores directly in the
-                code. Later, this can be connected to real storage or charts.
+                Add more rows as you keep giving mocks. This can later become a
+                proper chart.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Tricks & Tips / Resources */}
-        <section className="grid gap-6 md:grid-cols-[1.7fr,1.3fr]">
-          {/* Tricks & Tips */}
-          <div className="card">
-            <h3 className="text-lg font-semibold mb-2">Simple Tricks & Tips</h3>
-            <ul className="text-xs text-gray-200 list-disc list-inside space-y-1">
-              <li>
-                Don&apos;t get stuck: if a question feels heavy after 45 seconds,
-                mark and move.
-              </li>
-              <li>
-                English: read options first for RC to know what to look for while
-                reading.
-              </li>
-              <li>
-                Quant: round numbers smartly for approximation (e.g., 99.8 ≈
-                100).
-              </li>
-              <li>
-                Reasoning: always draw simple diagrams; don&apos;t solve in your
-                head.
-              </li>
-              <li>
-                During mocks, track attempted vs. correct — high attempts but low
-                accuracy means slow down.
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources & Videos */}
-          <div className="card">
-            <h3 className="text-lg font-semibold mb-2">
-              Resources & Videos (YouTube)
-            </h3>
-            <p className="text-xs text-gray-300 mb-2">
-              Use these channels/search terms for topic-wise free video lessons.
-            </p>
-            <ul className="text-xs text-gray-200 list-disc list-inside space-y-1">
-              <li>
-                Search: &quot;SBI PO English strategy&quot; and focus on RC +
-                grammar playlists.
-              </li>
-              <li>
-                Search: &quot;SBI PO Quant speed tricks&quot; for arithmetic and
-                DI shortcuts.
-              </li>
-              <li>
-                Search: &quot;SBI PO Reasoning puzzles&quot; for seating and
-                floor puzzles.
-              </li>
-              <li>
-                Bookmark 1–2 teachers you like and stick to them until exam.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Subject Overview Cards */}
-        <section className="grid gap-6 md:grid-cols-3">
-          <div className="card">
-            <h2 className="text-lg font-semibold mb-2">English Overview</h2>
-            <p className="text-sm text-gray-200">
-              Focus: RC, error spotting, cloze, and basic vocab. Build speed by
-              reading daily and solving PYQs.
-            </p>
-          </div>
-          <div className="card">
-            <h2 className="text-lg font-semibold mb-2">Quant Overview</h2>
-            <p className="text-sm text-gray-200">
-              Focus: simplification, arithmetic (percentages, ratio, time &
-              work), and simple DI charts.
-            </p>
-          </div>
-          <div className="card">
-            <h2 className="text-lg font-semibold mb-2">Reasoning Overview</h2>
-            <p className="text-sm text-gray-200">
-              Focus: puzzles, seating, inequalities, syllogism, and basic
-              directions/blood relations.
-            </p>
-          </div>
-        </section>
-
-        {/* Mock Tests & PYQs */}
-        <section className="flex flex-col gap-4">
-          <h2 className="text-xl font-semibold">Mock Tests & PYQs</h2>
+        {/* Study Material – Notes + Key Points */}
+        <section id="study" className="flex flex-col gap-6 mt-8">
+          <h2 className="text-xl font-semibold">Study Material</h2>
           <p className="text-sm text-gray-300 max-w-xl">
-            Use free platforms to attempt full-length SBI PO prelims mocks and
-            previous year question sets in exam-like timing.
+            Notes and key exam points for English, Quant, and Reasoning in one
+            place.
+          </p>
+
+          {/* English */}
+          <div className="card">
+            <h3 className="text-lg font-semibold mb-2">English – Notes</h3>
+            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
+              <li>RC: identify main idea, tone, and keywords quickly.</li>
+              <li>
+                Error spotting: focus on subject–verb agreement, tenses, and
+                prepositions.
+              </li>
+              <li>Vocabulary: learn words from mocks and revise daily.</li>
+            </ul>
+            <h4 className="text-sm font-semibold mt-3 mb-1">Key Points</h4>
+            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
+              <li>Read options before RC to know what to look for.</li>
+              <li>
+                In error spotting, re-read the full sentence after choosing the
+                answer.
+              </li>
+            </ul>
+          </div>
+
+          {/* Quant */}
+          <div className="card">
+            <h3 className="text-lg font-semibold mb-2">Quant – Notes</h3>
+            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
+              <li>
+                Core topics: percentages, ratio & proportion, time & work,
+                simple/compound interest.
+              </li>
+              <li>
+                Practise simplification/approximation daily to improve speed.
+              </li>
+              <li>DI: focus on simple tables, bar graphs, and line charts.</li>
+            </ul>
+            <h4 className="text-sm font-semibold mt-3 mb-1">Key Points</h4>
+            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
+              <li>Round numbers smartly for approximation (e.g., 99.8 ≈ 100).</li>
+              <li>Skip heavy calculations if they look time-consuming initially.</li>
+            </ul>
+          </div>
+
+          {/* Reasoning */}
+          <div className="card">
+            <h3 className="text-lg font-semibold mb-2">Reasoning – Notes</h3>
+            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
+              <li>Puzzles: always draw simple, clean diagrams.</li>
+              <li>Common topics: seating, inequalities, syllogism, blood relations.</li>
+              <li>Practice mixed sets to simulate exam pattern.</li>
+            </ul>
+            <h4 className="text-sm font-semibold mt-3 mb-1">Key Points</h4>
+            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
+              <li>Never try to solve complex puzzles fully in your head.</li>
+              <li>
+                After solving a puzzle, rewrite the logic briefly so you remember
+                the pattern.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Mocks & Practice Questions */}
+        <section id="mocks" className="flex flex-col gap-4 mt-8">
+          <h2 className="text-xl font-semibold">Mocks & Practice Questions</h2>
+          <p className="text-sm text-gray-300 max-w-xl">
+            All your mock test platforms and practice question sources in one
+            hub.
           </p>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="card">
-              <h3 className="font-semibold mb-1">Mock Tests</h3>
+              <h3 className="font-semibold mb-1">Full-Length Mocks</h3>
               <p className="text-xs text-gray-300 mb-2">
-                Full-length SBI PO prelims mock tests with detailed solutions.
+                SBI PO prelims mocks with detailed solutions.
               </p>
               <a
                 href="https://testbook.com/sbi-po/test-series"
@@ -330,7 +340,7 @@ export default function Home() {
             <div className="card">
               <h3 className="font-semibold mb-1">Previous Year Questions</h3>
               <p className="text-xs text-gray-300 mb-2">
-                Topic-wise and full paper PYQs to understand question patterns.
+                Topic-wise and full paper PYQs to understand patterns.
               </p>
               <a
                 href="https://www.studiestoday.com/sarkari-exams/banking"
@@ -341,9 +351,9 @@ export default function Home() {
               </a>
             </div>
             <div className="card">
-              <h3 className="font-semibold mb-1">More Free Mocks</h3>
+              <h3 className="font-semibold mb-1">More Practice</h3>
               <p className="text-xs text-gray-300 mb-2">
-                Extra practice from other free mock platforms.
+                Extra prelims practice from other free platforms.
               </p>
               <a
                 href="https://www.ixambee.com/free-mock-tests/sbi-po-pre"
@@ -363,82 +373,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Subject Wise Prep */}
-        <section className="flex flex-col gap-6 mt-8">
-          <h2 className="text-xl font-semibold">Subject Wise Prep</h2>
-          <p className="text-sm text-gray-300 max-w-xl">
-            Use these as your mini dashboards for each subject in the last few
-            days.
-          </p>
-
-          {/* English plan */}
+        {/* AI Doubt Solver (concept) */}
+        <section id="doubts" className="flex flex-col gap-4 mt-8">
+          <h2 className="text-xl font-semibold">AI Doubt Solver</h2>
           <div className="card">
-            <h3 className="text-lg font-semibold mb-2">
-              English – Last Few Days Plan
-            </h3>
             <p className="text-sm text-gray-200 mb-2">
-              Goal: get comfortable with Reading Comprehension, error spotting,
-              and basic vocabulary.
+              Ask your SBI PO doubts in English, Quant, or Reasoning and get
+              instant explanations. This section can later connect to a real AI
+              API.
             </p>
-            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
-              <li>Every day, read 2 short RCs and answer all questions.</li>
-              <li>Practice 10–15 error spotting questions from PYQs.</li>
-              <li>Learn 10 new words daily from the mocks you attempt.</li>
-              <li>
-                Time yourself: try to finish one English section in 18–20
-                minutes.
-              </li>
-            </ul>
-          </div>
-
-          {/* Quant plan */}
-          <div className="card">
-            <h3 className="text-lg font-semibold mb-2">
-              Quant – Last Few Days Plan
-            </h3>
-            <p className="text-sm text-gray-200 mb-2">
-              Goal: get fast at simplification, arithmetic, and basic DI.
+            <p className="text-xs text-gray-300 mb-3">
+              For now, click below to open your AI assistant in a new tab and
+              paste questions from your mocks or practice sets.
             </p>
-            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
-              <li>
-                Warm-up: 15–20 simplification/approximation questions every day.
-              </li>
-              <li>
-                Pick 2 arithmetic topics daily (e.g., Percentage + Profit & Loss,
-                or Ratio + Time & Work).
-              </li>
-              <li>Attempt 1 small DI set (5 questions) from a mock or PYQ.</li>
-              <li>
-                Time yourself: aim to finish the Quant section in about 20
-                minutes with accuracy.
-              </li>
-            </ul>
-          </div>
-
-          {/* Reasoning plan */}
-          <div className="card">
-            <h3 className="text-lg font-semibold mb-2">
-              Reasoning – Last Few Days Plan
-            </h3>
-            <p className="text-sm text-gray-200 mb-2">
-              Goal: build confidence with puzzles, seating arrangements, and
-              easy logic questions.
-            </p>
-            <ul className="text-sm text-gray-200 list-disc list-inside space-y-1">
-              <li>Do 1 puzzle or seating arrangement set every day.</li>
-              <li>
-                Practice 10–15 questions of inequalities, syllogism, or blood
-                relations.
-              </li>
-              <li>
-                After each puzzle, quickly rewrite the logic so you remember the
-                pattern.
-              </li>
-              <li>
-                Time yourself: attempt mixed reasoning sets for 20 minutes to
-                simulate the exam.
-              </li>
-            </ul>
+            <a
+              href="https://www.perplexity.ai"
+              target="_blank"
+              className="inline-block rounded-full px-5 py-2 bg-blue-500 hover:bg-blue-400 text-xs font-semibold transition-colors"
+            >
+              Open AI Doubt Solver
+            </a>
           </div>
         </section>
 
