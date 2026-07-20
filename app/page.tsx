@@ -122,6 +122,101 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Progress Summary + Performance Log + Mock History */}
+        <section className="flex flex-col gap-6">
+          {/* Progress summary cards */}
+          <div className="grid gap-4 md:grid-cols-3 text-xs">
+            <div className="card">
+              <p className="font-semibold mb-1">Mocks attempted</p>
+              <p className="text-2xl font-bold text-blue-400">5</p>
+              <p className="text-gray-300 mt-1">
+                Update this number manually as you finish more tests.
+              </p>
+            </div>
+            <div className="card">
+              <p className="font-semibold mb-1">Average score</p>
+              <p className="text-2xl font-bold text-purple-400">62%</p>
+              <p className="text-gray-300 mt-1">
+                Use rough average from last few mocks (Prelims).
+              </p>
+            </div>
+            <div className="card">
+              <p className="font-semibold mb-1">Main focus area</p>
+              <p className="text-sm text-gray-200">
+                Example: Quant arithmetic + puzzles. Change this based on your
+                weak topics.
+              </p>
+            </div>
+          </div>
+
+          {/* Performance Log + Mock History grid */}
+          <div className="grid gap-6 md:grid-cols-[1.4fr,1.6fr]">
+            {/* Performance Log card */}
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Performance Log</h3>
+              <p className="text-xs text-gray-300 mb-2">
+                Use this card to note down how your mocks went. You can edit the
+                text in the code for each new mock.
+              </p>
+              <ul className="text-xs text-gray-200 list-disc list-inside space-y-1">
+                <li>
+                  Mock name: Testbook Free Mock 1 · Score: 54/100 · Time: 60
+                  min.
+                </li>
+                <li>
+                  Mock name: Oliveboard Prelims 1 · Score: 58/100 · Time: 60
+                  min.
+                </li>
+                <li>
+                  Main weak areas: RC accuracy, DI speed, puzzle setup.
+                </li>
+                <li>
+                  Action plan: extra RC practice, timed DI sets, puzzles daily.
+                </li>
+              </ul>
+              <p className="text-[11px] text-gray-400 mt-3">
+                Tip: You can duplicate these lines and adjust scores after each
+                mock so this becomes your small analytics log.
+              </p>
+            </div>
+
+            {/* Mock History list */}
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Mock History</h3>
+              <p className="text-xs text-gray-300 mb-2">
+                Simple list of mocks attempted so far. Edit rows manually as you
+                progress.
+              </p>
+              <div className="text-[11px] text-gray-200">
+                <div className="flex justify-between border-b border-white/10 pb-1 mb-1">
+                  <span className="font-semibold">Date · Platform</span>
+                  <span className="font-semibold">Score</span>
+                </div>
+                <div className="flex justify-between py-1">
+                  <span>20 Jul · Testbook Prelims 1</span>
+                  <span>54/100</span>
+                </div>
+                <div className="flex justify-between py-1">
+                  <span>21 Jul · Oliveboard Prelims 1</span>
+                  <span>58/100</span>
+                </div>
+                <div className="flex justify-between py-1">
+                  <span>22 Jul · ixamBee Free Test</span>
+                  <span>60/100</span>
+                </div>
+                <div className="flex justify-between py-1">
+                  <span>23 Jul · Sarkariexam Mock</span>
+                  <span>61/100</span>
+                </div>
+              </div>
+              <p className="text-[11px] text-gray-400 mt-3">
+                You can add more rows and adjust dates/scores directly in the
+                code. Later, this can be connected to real storage or charts.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Tricks & Tips / Resources */}
         <section className="grid gap-6 md:grid-cols-[1.7fr,1.3fr]">
           {/* Tricks & Tips */}
