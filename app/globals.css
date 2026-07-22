@@ -58,11 +58,10 @@ body {
   z-index: -5;
   pointer-events: none;
   background:
-    radial-gradient(circle at 15% 0%, rgba(59, 130, 246, 0.25), transparent 55%),
-    radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.3), transparent 55%),
-    radial-gradient(circle at 50% 30%, rgba(147, 51, 234, 0.25), transparent 60%);
+    radial-gradient(circle at 15% 0%, rgba(16, 185, 129, 0.22), transparent 55%),
+    radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.26), transparent 55%),
+    radial-gradient(circle at 50% 30%, rgba(45, 212, 191, 0.22), transparent 60%);
   background-size: 180% 180%;
-  
 }
 
 /* Keyframes */
