@@ -62,20 +62,20 @@ export default function HomePage() {
             <p className="text-sm text-gray-300">
               SBI PO selection has three phases – Prelims, Mains (objective +
               descriptive) and Phase III with psychometric test, group exercises
-              and interview. [web:85][web:49][web:88][web:59][web:171]
+              and interview. 
             </p>
             <ul className="text-xs text-gray-200 space-y-1 list-disc list-inside">
               <li>
                 Phase I – Preliminary Exam: online objective, qualifying only,
-                used to shortlist candidates for mains. [web:85][web:49][web:88][web:59][web:171]
+                used to shortlist candidates for mains. 
               </li>
               <li>
                 Phase II – Main Exam: objective test plus descriptive paper; marks
-                are counted towards the final merit list. [web:85][web:49][web:88][web:59][web:171]
+                are counted towards the final merit list. 
               </li>
               <li>
                 Phase III – Psychometric Test, Group Exercises and Interview;
-                combined with mains for final selection. [web:85][web:49][web:88][web:59][web:171]
+                combined with mains for final selection.
               </li>
             </ul>
           </div>
