@@ -1,158 +1,193 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function Home() {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffset(window.scrollY * 0.06);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+export default function HomePage() {
   return (
-    <main className="min-h-screen relative overflow-hidden bg-gradient-to-b from-[#020817] via-[#020b1a] to-[#020817] text-white">
-      {/* Aurora background */}
-      <div className="aurora-bg animate-aurora" />
-      {/* Floating blobs */}
-      <div className="blob w-64 h-64 bg-emerald-500/35 -top-24 -left-24" />
-      <div className="blob w-80 h-80 bg-sky-500/35 top-40 -right-36" />
-      <div className="blob w-64 h-64 bg-teal-400/35 bottom-0 left-1/3" />
-
-      <div className="relative max-w-6xl mx-auto px-4 py-16 flex flex-col gap-12">
+    <main className="min-h-screen bg-[#020617] text-white">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
         {/* Hero */}
-        <section
-          className="flex flex-col gap-6 max-w-3xl"
-          style={{ transform: `translateY(${offset * -0.6}px)` }}
-        >
-          <p className="text-xs text-emerald-300 uppercase tracking-[0.25em]">
-            SBI PO · Personal Prep Hub
+        <section className="border border-white/10 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-black p-6 md:p-8">
+          <p className="text-xs uppercase tracking-[0.2em] text-emerald-300/70 mb-2">
+            SBI PO Prep Hub
           </p>
-          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-            One place for your{" "}
-            <span className="text-emerald-300">SBI PO prelims & mains</span>{" "}
-            preparation.
+          <h1 className="text-2xl md:text-3xl font-semibold mb-3">
+            SBI PO Prelims & Mains – one place to organise your preparation
           </h1>
-          <p className="text-sm md:text-base text-gray-300">
-            SBI PO Prep Hub organizes your subject notes, mocks, practice
-            questions and doubt‑solving into clear sections, so you can focus on
-            studying instead of managing links.
+          <p className="text-sm text-gray-300 max-w-2xl mb-4">
+            Understand the exam pattern and selection process, plan your daily
+            study, track your progress, and jump directly into subject workspaces
+            and mocks.
           </p>
+
+          {/* Quick actions */}
           <div className="flex flex-wrap gap-3 mt-2 text-xs">
-            <a
-              href="/english"
+            <Link
+              href="/planner"
               className="rounded-full px-5 py-2 bg-emerald-500 hover:bg-emerald-400 font-semibold transition-colors"
             >
-              Go to English workspace
-            </a>
-            <a
+              Start with planner
+            </Link>
+            <Link
               href="/mocks"
               className="rounded-full px-5 py-2 bg-sky-500 hover:bg-sky-400 font-semibold transition-colors"
             >
               Open mocks hub
-            </a>
-            <a
-              href="/doubts"
+            </Link>
+            <Link
+              href="/english"
               className="rounded-full px-5 py-2 border border-emerald-400/70 hover:border-emerald-300 font-semibold transition-colors"
             >
-              AI doubt solver
-            </a>
+              English workspace
+            </Link>
+            <Link
+              href="/analytics"
+              className="rounded-full px-5 py-2 border border-sky-400/70 hover:border-sky-300 font-semibold transition-colors"
+            >
+              View prep analytics
+            </Link>
           </div>
+
+          <p className="mt-4 text-xs text-gray-400">
+            Tip: Use the planner and analytics every day so this homepage becomes
+            your snapshot of where you stand for SBI PO.
+          </p>
         </section>
 
-        {/* Basic exam overview */}
-        <section className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold">SBI PO prelims overview</h2>
-          <p className="text-sm text-gray-300 max-w-2xl">
-            These are the core sections you&apos;ll prepare inside the app. Each
-            has its own dedicated page with notes, key points and practice
-            links.
-          </p>
-          <div className="grid gap-4 md:grid-cols-5 text-xs">
-            <div className="card">
-              <p className="font-semibold mb-1">English</p>
-              <p className="text-gray-300">30–40 questions</p>
-              <p className="text-gray-400 mt-1">RC, grammar, vocab</p>
-            </div>
-            <div className="card">
-              <p className="font-semibold mb-1">Reasoning</p>
-              <p className="text-gray-300">30–35 questions</p>
-              <p className="text-gray-400 mt-1">Puzzles, seating, logic</p>
-            </div>
-            <div className="card">
-              <p className="font-semibold mb-1">Quant</p>
-              <p className="text-gray-300">30–35 questions</p>
-              <p className="text-gray-400 mt-1">Arithmetic, DI, speed</p>
-            </div>
-            <div className="card">
-              <p className="font-semibold mb-1">General awareness</p>
-              <p className="text-gray-300">Mains focused</p>
-              <p className="text-gray-400 mt-1">Current affairs, banking</p>
-            </div>
-            <div className="card">
-              <p className="font-semibold mb-1">Computer awareness</p>
-              <p className="text-gray-300">Mains/support</p>
-              <p className="text-gray-400 mt-1">Basics, security, MS Office</p>
-            </div>
+        {/* Overview + daily record */}
+        <section className="grid gap-6 md:grid-cols-2">
+          {/* SBI PO overview & selection process */}
+          <div className="border border-white/10 rounded-2xl bg-slate-950 p-5 space-y-3">
+            <h2 className="text-lg font-semibold">SBI PO exam & selection process</h2>
+            <p className="text-sm text-gray-300">
+              SBI PO selection has three phases – Prelims, Mains (objective +
+              descriptive) and Phase III with psychometric test, group exercises
+              and interview. [web:85][web:49][web:88][web:59][web:171]
+            </p>
+            <ul className="text-xs text-gray-200 space-y-1 list-disc list-inside">
+              <li>
+                Phase I – Preliminary Exam: online objective, qualifying only,
+                used to shortlist candidates for mains. [web:85][web:49][web:88][web:59][web:171]
+              </li>
+              <li>
+                Phase II – Main Exam: objective test plus descriptive paper; marks
+                are counted towards the final merit list. [web:85][web:49][web:88][web:59][web:171]
+              </li>
+              <li>
+                Phase III – Psychometric Test, Group Exercises and Interview;
+                combined with mains for final selection. [web:85][web:49][web:88][web:59][web:171]
+              </li>
+            </ul>
           </div>
-        </section>
 
-        {/* App features overview */}
-        <section className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold">What you can do here</h2>
-          <p className="text-sm text-gray-300 max-w-2xl">
-            The detailed plans, notes and links live on their own pages.
-            Homepage is just your entry point into the app.
-          </p>
-          <div className="grid gap-4 md:grid-cols-4 text-xs">
-            <div className="card">
-              <p className="font-semibold mb-1">Subject workspaces</p>
-              <p className="text-gray-300 mb-2">
-                Separate pages for English, Reasoning, Quant, GA and Computer.
-              </p>
-              <a
-                href="/english"
-                className="inline-block mt-1 text-emerald-300 hover:text-emerald-200 underline underline-offset-2"
+          {/* Daily track record */}
+          <div className="border border-white/10 rounded-2xl bg-slate-950 p-5 space-y-3">
+            <h2 className="text-lg font-semibold">Daily track record</h2>
+            <p className="text-sm text-gray-300">
+              Use the planner to log what you study each day and the analytics
+              dashboard to record your recent section scores and mock tests so you
+              always know your current level.
+            </p>
+            <div className="space-y-2 text-xs text-gray-200">
+              <p className="font-semibold">How to use it daily:</p>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Mark completed topics or sections in the Planner after each session.</li>
+                <li>Enter your latest mock scores and section performance in Analytics.</li>
+                <li>Revisit this homepage weekly to compare progress and adjust targets.</li>
+              </ul>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-3 text-xs">
+              <Link
+                href="/planner"
+                className="px-4 py-1.5 rounded-full bg-sky-500 hover:bg-sky-400 font-semibold transition-colors"
               >
-                View English page
-              </a>
+                Open Planner
+              </Link>
+              <Link
+                href="/analytics"
+                className="px-4 py-1.5 rounded-full bg-emerald-500/70 hover:bg-emerald-500 font-semibold transition-colors"
+              >
+                Open Analytics
+              </Link>
             </div>
-            <div className="card">
-              <p className="font-semibold mb-1">Mocks & PYQs hub</p>
-              <p className="text-gray-300 mb-2">
-                All your mock test and PYQ links gathered in one place.
+          </div>
+        </section>
+
+        {/* Paper pattern + how the site helps */}
+        <section className="grid gap-6 md:grid-cols-2">
+          {/* Prelims & mains paper pattern */}
+          <div className="border border-white/10 rounded-2xl bg-slate-950 p-5 space-y-3">
+            <h2 className="text-lg font-semibold">
+              Paper pattern – Prelims & Mains
+            </h2>
+
+            <div className="space-y-2 text-xs text-gray-200">
+              <p className="font-semibold">Prelims (Phase I)</p>
+              <p className="text-gray-300">
+                Online objective test with 3 sections – English Language,
+                Quantitative Aptitude and Reasoning Ability – totalling 100
+                questions, 100 marks and 60 minutes, with 1/4 negative marking per
+                wrong answer. [web:85][web:49][web:88][web:59][web:171]
               </p>
-              <a
+              <ul className="list-disc list-inside space-y-1">
+                <li>Sectional timing is around 20 minutes per section. [web:85][web:88][web:171]</li>
+                <li>Prelims is qualifying; marks are not used in final merit. [web:85][web:49][web:88][web:59][web:171]</li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-xs text-gray-200 mt-3">
+              <p className="font-semibold">Mains (Phase II)</p>
+              <p className="text-gray-300">
+                Objective test with 4 sections (Reasoning & Computer Aptitude, Data
+                Analysis & Interpretation, General/Economy/Banking Awareness,
+                English Language) for 200 marks with sectional timing, followed by a
+                descriptive test (letter and essay) of 30 marks in 30 minutes.
+                [web:85][web:49][web:88][web:59][web:171]
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Objective + descriptive marks form the mains score. [web:85][web:49][web:88][web:171]</li>
+                <li>Mains score has higher weight than interview for final merit. [web:85][web:49][web:88][web:171]</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* How to use this site for selection */}
+          <div className="border border-white/10 rounded-2xl bg-slate-950 p-5 space-y-3">
+            <h2 className="text-lg font-semibold">
+              Using this site for SBI PO selection
+            </h2>
+            <p className="text-sm text-gray-300">
+              The navbar gives you quick access to everything you need – subjects,
+              planner, mocks, analytics and about – so you can prepare in line with
+              the SBI PO pattern and selection process.
+            </p>
+            <ul className="text-xs text-gray-200 space-y-1 list-disc list-inside">
+              <li>
+                Use the Subjects dropdown to focus on English, Quant, Reasoning, GA
+                and Computer according to prelims and mains weightage. [web:49][web:59][web:171]
+              </li>
+              <li>
+                Use Mocks to simulate the full prelims and mains pattern under timed
+                conditions, then log results in Analytics.
+              </li>
+              <li>
+                Track daily study plans in Planner and revisit About to remind
+                yourself how to use the hub effectively.
+              </li>
+            </ul>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              <Link
                 href="/mocks"
-                className="inline-block mt-1 text-emerald-300 hover:text-emerald-200 underline underline-offset-2"
+                className="px-4 py-1.5 rounded-full bg-sky-500 hover:bg-sky-400 font-semibold transition-colors"
               >
-                Open mocks hub
-              </a>
-            </div>
-            <div className="card">
-              <p className="font-semibold mb-1">AI doubt solver</p>
-              <p className="text-gray-300 mb-2">
-                Ask doubts from mocks and practice sets using an AI assistant.
-              </p>
-              <a
-                href="/doubts"
-                className="inline-block mt-1 text-emerald-300 hover:text-emerald-200 underline underline-offset-2"
+                Go to Mocks
+              </Link>
+              <Link
+                href="/about"
+                className="px-4 py-1.5 rounded-full border border-white/20 hover:border-white/40 font-semibold transition-colors"
               >
-                Go to doubt solver
-              </a>
-            </div>
-            <div className="card">
-              <p className="font-semibold mb-1">Dashboard & plans</p>
-              <p className="text-gray-300 mb-2">
-                Track mocks, note scores and follow a crash plan (on the
-                dashboard page).
-              </p>
-              <span className="inline-block mt-1 text-gray-400">
-                You can add a dedicated /dashboard page later.
-              </span>
+                Learn how to use this site
+              </Link>
             </div>
           </div>
         </section>

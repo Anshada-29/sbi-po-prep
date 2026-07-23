@@ -19,67 +19,91 @@ export default function RootLayout({
         <Cursor />
 
         {/* Global navbar */}
-        <header className="border-b border-white/10 bg-[#020617]/80 backdrop-blur-sm">
-          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2">
-              <div className="h-7 w-7 rounded-xl bg-white/10 flex items-center justify-center text-[10px] font-bold">
-                SBI
-              </div>
-              <div>
-                <p className="text-[11px] text-gray-300">SBI PO Prep Hub</p>
-                <p className="text-[11px] text-gray-400">
-                  Personal dashboard for prelims & mains
-                </p>
-              </div>
-            </div>
-            <nav className="flex flex-wrap gap-2">
+        <header className="w-full border-b border-white/10 bg-black/40 backdrop-blur">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            {/* Logo / title */}
+            <Link
+              href="/"
+              className="text-sm md:text-base font-semibold text-white"
+            >
+              SBI PO Prep Hub
+            </Link>
+
+            {/* Nav links */}
+            <nav className="flex items-center gap-4 text-xs md:text-sm text-gray-300">
               <Link
                 href="/"
-                className="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+                className="hover:text-emerald-300 transition-colors"
               >
                 Home
               </Link>
+
+              {/* Subjects dropdown */}
+              <div className="relative group">
+                <button
+                  className="flex items-center gap-1 hover:text-emerald-300 transition-colors"
+                  type="button"
+                >
+                  <span>Subjects</span>
+                  <span className="text-[10px]">▼</span>
+                </button>
+                <div className="absolute left-0 mt-2 w-40 bg-[#020817] border border-white/15 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                  <Link
+                    href="/english"
+                    className="block px-3 py-2 hover:bg-white/10"
+                  >
+                    English
+                  </Link>
+                  <Link
+                    href="/ga"
+                    className="block px-3 py-2 hover:bg-white/10"
+                  >
+                    GA
+                  </Link>
+                  <Link
+                    href="/computer"
+                    className="block px-3 py-2 hover:bg-white/10"
+                  >
+                    Computer
+                  </Link>
+                  <Link
+                    href="/reasoning"
+                    className="block px-3 py-2 hover:bg-white/10"
+                  >
+                    Reasoning
+                  </Link>
+                  <Link
+                    href="/quant"
+                    className="block px-3 py-2 hover:bg-white/10"
+                  >
+                    Quants
+                  </Link>
+                </div>
+              </div>
+
               <Link
-                href="/english"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+                href="/planner"
+                className="hover:text-emerald-300 transition-colors"
               >
-                English
-              </Link>
-              <Link
-                href="/quant"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
-              >
-                Quant
-              </Link>
-              <Link
-                href="/reasoning"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
-              >
-                Reasoning
-              </Link>
-              <Link
-                href="/ga"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
-              >
-                General Awareness
-              </Link>
-              <Link
-                href="/computer"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
-              >
-                Computer
+                Planner
               </Link>
               <Link
                 href="/mocks"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+                className="hover:text-emerald-300 transition-colors"
               >
                 Mocks
               </Link>
               <Link
-                href="/doubts"
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/15"
+                href="/analytics"
+                className="hover:text-emerald-300 transition-colors"
               >
-                AI Doubt Solver
+                Analytics
+              </Link>
+              <Link
+                href="/about"
+                className="hover:text-emerald-300 transition-colors"
+              >
+                About
               </Link>
             </nav>
           </div>
