@@ -11,7 +11,7 @@ export default function AboutPage() {
           <p className="text-sm text-gray-300 max-w-2xl mb-4">
             This is your personal SBI PO preparation space – combining subject
             workspaces, mocks, planner and analytics around the official exam
-            pattern and selection process. [web:85][web:49][web:88][web:59][web:171]
+            pattern and selection process.
           </p>
         </section>
       </div>
