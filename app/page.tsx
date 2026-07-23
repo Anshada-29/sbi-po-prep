@@ -127,11 +127,11 @@ export default function HomePage() {
                 Online objective test with 3 sections – English Language,
                 Quantitative Aptitude and Reasoning Ability – totalling 100
                 questions, 100 marks and 60 minutes, with 1/4 negative marking per
-                wrong answer. [web:85][web:49][web:88][web:59][web:171]
+                wrong answer. 
               </p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Sectional timing is around 20 minutes per section. [web:85][web:88][web:171]</li>
-                <li>Prelims is qualifying; marks are not used in final merit. [web:85][web:49][web:88][web:59][web:171]</li>
+                <li>Sectional timing is around 20 minutes per section. </li>
+                <li>Prelims is qualifying; marks are not used in final merit. </li>
               </ul>
             </div>
 
@@ -142,11 +142,11 @@ export default function HomePage() {
                 Analysis & Interpretation, General/Economy/Banking Awareness,
                 English Language) for 200 marks with sectional timing, followed by a
                 descriptive test (letter and essay) of 30 marks in 30 minutes.
-                [web:85][web:49][web:88][web:59][web:171]
+          
               </p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Objective + descriptive marks form the mains score. [web:85][web:49][web:88][web:171]</li>
-                <li>Mains score has higher weight than interview for final merit. [web:85][web:49][web:88][web:171]</li>
+                <li>Objective + descriptive marks form the mains score.</li>
+                <li>Mains score has higher weight than interview for final merit. </li>
               </ul>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
             <ul className="text-xs text-gray-200 space-y-1 list-disc list-inside">
               <li>
                 Use the Subjects dropdown to focus on English, Quant, Reasoning, GA
-                and Computer according to prelims and mains weightage. [web:49][web:59][web:171]
+                and Computer according to prelims and mains weightage.
               </li>
               <li>
                 Use Mocks to simulate the full prelims and mains pattern under timed
