@@ -38,48 +38,48 @@ export default function RootLayout({
                 Home
               </Link>
 
-              {/* Subjects dropdown */}
-              <div className="relative group">
-                <button
-                  className="flex items-center gap-1 hover:text-emerald-300 transition-colors"
-                  type="button"
-                >
-                  <span>Subjects</span>
-                  <span className="text-[10px]">▼</span>
-                </button>
-                <div className="absolute left-0 mt-2 w-40 bg-[#020817] border border-white/15 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
-                  <Link
-                    href="/english"
-                    className="block px-3 py-2 hover:bg-white/10"
-                  >
-                    English
-                  </Link>
-                  <Link
-                    href="/ga"
-                    className="block px-3 py-2 hover:bg-white/10"
-                  >
-                    GA
-                  </Link>
-                  <Link
-                    href="/computer"
-                    className="block px-3 py-2 hover:bg-white/10"
-                  >
-                    Computer
-                  </Link>
-                  <Link
-                    href="/reasoning"
-                    className="block px-3 py-2 hover:bg-white/10"
-                  >
-                    Reasoning
-                  </Link>
-                  <Link
-                    href="/quant"
-                    className="block px-3 py-2 hover:bg-white/10"
-                  >
-                    Quants
-                  </Link>
-                </div>
-              </div>
+             {/* Subjects dropdown */}
+<div className="relative group">
+  <button
+    className="flex items-center gap-1 hover:text-emerald-300 transition-colors"
+    type="button"
+  >
+    <span>Subjects</span>
+    <span className="text-[10px]">▼</span>
+  </button>
+  <div className="absolute left-0 mt-2 w-40 bg-[#020817] border border-white/15 rounded-lg shadow-lg hidden group-hover:block z-50">
+    <Link
+      href="/english"
+      className="block px-3 py-2 hover:bg-white/10"
+    >
+      English
+    </Link>
+    <Link
+      href="/ga"
+      className="block px-3 py-2 hover:bg-white/10"
+    >
+      GA
+    </Link>
+    <Link
+      href="/computer"
+      className="block px-3 py-2 hover:bg-white/10"
+    >
+      Computer
+    </Link>
+    <Link
+      href="/reasoning"
+      className="block px-3 py-2 hover:bg-white/10"
+    >
+      Reasoning
+    </Link>
+    <Link
+      href="/quant"
+      className="block px-3 py-2 hover:bg-white/10"
+    >
+      Quants
+    </Link>
+  </div>
+</div> 
 
               <Link
                 href="/planner"
